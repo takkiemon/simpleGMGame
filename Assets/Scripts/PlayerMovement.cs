@@ -10,5 +10,6 @@ public class PlayerMovement : MonoBehaviour {
 		Target.z = transform.position.z;
 
 		transform.position = Vector3.MoveTowards(transform.position, Target, speed * Time.deltaTime / transform.localScale.x);
+		transform.LookAt(Target);
 	}
 }
