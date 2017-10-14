@@ -15,7 +15,6 @@ public class Spit : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) && transform.localScale.z > 1) {
 			transform.localScale -= new Vector3(decrease, decrease, decrease);
 			Instantiate(Doof, transform.position, transform.rotation);
-			Debug.Log(transform.rotation);
 			//score += 10;
 			//Score.text = "SCORE: " + score;
 		}
