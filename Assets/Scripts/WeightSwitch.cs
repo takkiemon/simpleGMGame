@@ -9,10 +9,19 @@ public class WeightSwitch : MonoBehaviour {
     public Color colorRight = new Color(0, 1, 0);
 
     public float treshold;
+    public float currentWeight;
+    public bool activated;
+
+    private void Start()
+    {
+        activated = false;
+        currentWeight = 0;
+    }
 
     private void OnTriggerStay(Collider other)
     {
-        if (/*other.tag == "Player" && */other.transform.localScale.x >= treshold)
+        //currentWeight += other.transform.localScale.x;
+        if (/*currentWeight*/ other.transform.localScale.x >= treshold)
         {
             GetComponent<Renderer>().material.color = colorRight;
         }
