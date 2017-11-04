@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class WeightSwitch : MonoBehaviour {
 
-	public Color colorStart = Color(1f, 0f, 0f);
-	public Color colorEnd = Color(0f, 1f, 0f);
+	public Color colorStart = new Color(0, 0, 0);
+	public Color colorWrong = new Color(1, 0, 0);
+    public Color colorRight = new Color(0, 1, 0);
+
+    public float treshold;
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && other.transform.localScale.x >= 1.5)
+        if (/*other.tag == "Player" && */other.transform.localScale.x >= treshold)
         {
-			GetComponent<Renderer>().material.color = colorEnd;
+            GetComponent<Renderer>().material.color = colorRight;
         }
+        else
+        {
+            GetComponent<Renderer>().material.color = colorWrong;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GetComponent<Renderer>().material.color = colorStart;
     }
 }

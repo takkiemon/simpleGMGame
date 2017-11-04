@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Color : MonoBehaviour {
+public class ColorScript : MonoBehaviour {
 
 	public List<Material> Mats = new List<Material>();
 
