@@ -16,6 +16,10 @@ public class Eat : MonoBehaviour {
 			Destroy(other.gameObject);
 
 			score += 10;
+            if (!Score)
+            {
+                return;
+            }
 			Score.text = "SCORE: " + score;
 		}
 	}
